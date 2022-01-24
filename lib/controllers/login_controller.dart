@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
+import 'package:splashproject/services/pref_services.dart';
 
 class LoginController {
-
   ValueNotifier<bool> inLoader = ValueNotifier<bool>(false);
 
   String? _login;
@@ -12,10 +12,14 @@ class LoginController {
 
   Future<bool> auth() async {
     inLoader.value = true;
+    await Future.delayed(Duration(seconds: 3));
     // Só pra fingir consumo de api
     Future.delayed(Duration(seconds: 2));
     inLoader.value = false;
-    return (_login == 'admin' && _senha == '123');
-
+    if (_login == 'admin' && _senha == '123') {
+      PrefServices.save(_login!);
+      return true;
+    }
+    return false;
   }
 }

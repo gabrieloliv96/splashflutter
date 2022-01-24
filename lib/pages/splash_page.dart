@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splashproject/services/pref_services.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -9,11 +10,20 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then(
-      (_) => Navigator.of(context).pushReplacementNamed('/login'),
-    );
+    
+    Future.wait(
+      [
+        PrefServices.isAuth(),
+        Future.delayed(Duration(seconds: 2)),
+      ]
+    ).then((value) => value[0] ? Navigator.of(context).pushReplacementNamed('/home') : Navigator.of(context).pushReplacementNamed('/login'));
+    
+    
+    
+    // Future.delayed(Duration(seconds: 3)).then(
+    //   (_) => Navigator.of(context).pushReplacementNamed('/login'),
+    // );
   }
 
   @override
