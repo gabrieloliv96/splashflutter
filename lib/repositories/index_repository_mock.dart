@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:splashproject/models/post_model.dart';
-import 'package:splashproject/repositories/home_repository.dart';
+import 'package:splashproject/repositories/index_repository.dart';
 
-class HomeRepositoryMock implements HomeRepository{
+class IndexRepositoryMock implements IndexRepository{
   @override
   Future<List<PostModel>> getList() async {
     // TODO: implement getList

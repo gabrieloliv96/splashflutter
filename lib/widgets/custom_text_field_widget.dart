@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFieldWidget extends StatelessWidget {
+class CustomTextFieldWidget extends StatelessWidget{
   final Function(String) onChanged;
   final String label;
   final bool obscureText;

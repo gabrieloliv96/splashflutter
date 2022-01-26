@@ -3,7 +3,7 @@ import 'package:splashproject/pages/login_page.dart';
 import 'package:splashproject/pages/splash_page.dart';
 
 import 'pages/details_page.dart';
-import 'pages/home_page.dart';
+import 'pages/index_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,16 +16,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/splash',
       routes: {
-        '/splash': (_)   => SplashPage(),
-        '/login' : (_)   => LoginPage(),
-        '/home' : (_)    => HomePage(),
-        '/details' : (_) => DetailsPage(),
+        '/splash'  : (_)   => SplashPage(),
+        '/login'   : (_)   => LoginPage(),
+        '/index'   : (_)   => IndexPage(),
+        '/details' : (_)   => DetailsPage(),
       },
     );
   }

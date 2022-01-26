@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:splashproject/models/post_model.dart';
 
-import 'home_repository.dart';
+import 'index_repository.dart';
 
-class HomeRepositoryImp implements HomeRepository {
+class IndexRepositoryImp implements IndexRepository {
   @override
   Future<List<PostModel>> getList() async {
     try {

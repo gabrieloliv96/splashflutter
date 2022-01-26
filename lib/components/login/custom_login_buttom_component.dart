@@ -16,7 +16,7 @@ class CustomLoginButtonComponent extends StatelessWidget {
               onPressed: () {
                 loginController.auth().then((result) {
                   if (result) {
-                    Navigator.of(context).pushReplacementNamed('/home');
+                    Navigator.of(context).pushReplacementNamed('/index');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
