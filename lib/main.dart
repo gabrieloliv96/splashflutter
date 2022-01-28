@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:splashproject/pages/contact_page.dart';
 import 'package:splashproject/pages/login_page.dart';
 import 'package:splashproject/pages/splash_page.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      // title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/login'   : (_)   => LoginPage(),
         '/index'   : (_)   => IndexPage(),
         '/details' : (_)   => DetailsPage(),
+        '/contact' : (_)   => ContactPage(),
       },
     );
   }

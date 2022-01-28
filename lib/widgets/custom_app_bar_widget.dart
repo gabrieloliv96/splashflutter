@@ -8,6 +8,7 @@ class CustomAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   State<CustomAppBarWidget> createState() => _CustomAppBarWidgetState();
   @override
   Size get preferredSize => const Size.fromHeight(110);
+  
 }
 
 class _CustomAppBarWidgetState extends State<CustomAppBarWidget> {
@@ -16,7 +17,7 @@ class _CustomAppBarWidgetState extends State<CustomAppBarWidget> {
 
   return DefaultTabController(
         initialIndex: 1,
-        length: 4,
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
             title: Text('Cabemce'),
@@ -48,8 +49,8 @@ class _CustomAppBarWidgetState extends State<CustomAppBarWidget> {
               tabs: [
                 Tab(icon: Icon(Icons.home), text: 'Home'),
                 Tab(icon: Icon(Icons.star), text: 'Feed'),
-                Tab(icon: Icon(Icons.face), text: 'Profile'),
-                Tab(icon: Icon(Icons.settings), text: 'Settings'),
+                // Tab(icon: Icon(Icons.face), text: 'Profile'),
+                // Tab(icon: Icon(Icons.settings), text: 'Settings'),
               ],
             ),
             elevation: 20,
