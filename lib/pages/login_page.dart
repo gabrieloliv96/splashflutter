@@ -18,7 +18,12 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.people, size: MediaQuery.of(context).size.height * 0.2),
+            Image.asset(
+              'assets/logo.png',
+              width: 300,
+              height: 300,
+            ),
+            // Icon(Icons.people, size: MediaQuery.of(context).size.height * 0.2),
             CustomTextFieldWidget(
               onChanged: _controller.setLogin,
               label: 'Usuario',

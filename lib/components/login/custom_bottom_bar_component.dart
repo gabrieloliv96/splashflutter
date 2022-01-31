@@ -36,7 +36,7 @@ class _CustomBottomBarComponentState extends State<CustomBottomBarComponent> {
     setState(() {
       // _selectedIndex = index;
       if(index == 0 ){
-        Navigator.of(context).pushNamed('/feed');
+        Navigator.of(context).pushNamed('/contact');
       }
     });
   }
