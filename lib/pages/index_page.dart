@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splashproject/components/login/custom_bottom_bar_component.dart';
+import 'package:splashproject/pages/inicio_page.dart';
 import 'package:splashproject/services/pref_services.dart';
 
 class IndexPage extends StatefulWidget {
@@ -28,12 +29,17 @@ class _IndexPageState extends State<IndexPage>
   ];
 
   late TabController _tabController;
-  int index = 1;
+  int _selectedIndex = 1;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: myTabs.length);
+    _tabController.addListener(() {
+      setState(() {
+        _selectedIndex = _selectedIndex;
+      });
+    });
   }
 
   @override
@@ -72,8 +78,10 @@ class _IndexPageState extends State<IndexPage>
           decoration: BoxDecoration(color: Colors.blue.shade900),
         ),
         bottom: TabBar(
-          labelStyle: const TextStyle(fontSize: 22.0, fontFamily: 'Family Name'), //For Selected tab
-          unselectedLabelStyle: const TextStyle(fontSize: 15.0, fontFamily: 'Family Name'),
+          labelStyle: const TextStyle(
+              fontSize: 22.0, fontFamily: 'Family Name'), //For Selected tab
+          unselectedLabelStyle:
+              const TextStyle(fontSize: 15.0, fontFamily: 'Family Name'),
           controller: _tabController,
           tabs: myTabs,
         ),
@@ -82,16 +90,11 @@ class _IndexPageState extends State<IndexPage>
         controller: _tabController,
         children: myTabs.map((Tab tab) {
           final String label = tab.text!.toLowerCase();
-          return Center(
-            child: Text(
-              'This is the $label tab',
-              style: const TextStyle(fontSize: 26),
-            ),
-          );
+          return RenderPage(label: label, index: _tabController.index);
         }).toList(),
       ),
-      bottomNavigationBar:
-          Container(color: Colors.blue.shade900, child: CustomBottomBarComponent()),
+      bottomNavigationBar: Container(
+          color: Colors.blue.shade900, child: CustomBottomBarComponent()),
     );
   }
 }

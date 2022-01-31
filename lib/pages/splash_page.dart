@@ -18,12 +18,6 @@ class _SplashPageState extends State<SplashPage> {
         Future.delayed(Duration(seconds: 2)),
       ]
     ).then((value) => value[0] ? Navigator.of(context).pushReplacementNamed('/index') : Navigator.of(context).pushReplacementNamed('/login'));
-    
-    
-    
-    // Future.delayed(Duration(seconds: 3)).then(
-    //   (_) => Navigator.of(context).pushReplacementNamed('/login'),
-    // );
   }
 
   @override

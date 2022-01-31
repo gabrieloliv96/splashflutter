@@ -35,8 +35,12 @@ class _CustomBottomBarComponentState extends State<CustomBottomBarComponent> {
   void _onItemTapped(int index) {
     setState(() {
       // _selectedIndex = index;
+      print(index);
       if(index == 0 ){
         Navigator.of(context).pushNamed('/contact');
+      }
+      else if(index == 1){
+        Navigator.of(context).pushNamed('/boletos');
       }
     });
   }
