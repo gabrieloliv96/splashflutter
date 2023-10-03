@@ -8,10 +8,12 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(args.title),
+        centerTitle: true,
       ),
       body: Container(
         padding: EdgeInsets.all(28),
         child: Column(
+          mainxAxisAligmet: MainAxisAligment.center,
           children: [
             Text(
               'Noticia ${args.id.toString()} , Autor ${args.userId}',
