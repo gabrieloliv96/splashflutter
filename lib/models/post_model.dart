@@ -6,6 +6,10 @@ class PostModel {
 
   PostModel(this.userId, this.id, this.title, this.body);
 
+  Map<dynamic, String> toMap() {
+    return { 'userId' : userId, 'id': id, 'title' : title, body' : body,};
+  };
+
   factory PostModel.fromJson(Map json) {
     return PostModel(
       json['userId'],
